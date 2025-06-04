@@ -3,21 +3,23 @@
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ---
-
 仓库建立初衷： 由于我的作品曾在 Discord 频道遭遇误删，为确保我创作成品的安全，我将会把我的东西放到GitHub上面
 
-## 1. 目录
-
+## 1. 作品目录
+### 角色卡
 1. 
-
+### 预设
+1.
+### 其他
+1.
 ---
-
-
 ## 2. 如何提供建议？
    欢迎在 [Issues](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/issues) 区提出想法、建议或报告错别字。
 
 ## 3. 文件结构 (暂定)
-
+.
+├── README.md # 本介绍文件
+├── LICENSE # 许可证文件
 
 
 ## 4. 许可协议
@@ -43,5 +45,4 @@
 
    GitHub Issues: 如有任何问题、建议、BUG反馈或相关讨论，欢迎在本仓库的 [Issues](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/issues) 区提出。
    作者： [特里丰/jfishfih] (https://github.com/Hai-de)
-
 ---
