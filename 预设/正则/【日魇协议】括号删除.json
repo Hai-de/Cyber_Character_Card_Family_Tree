@@ -1,0 +1,17 @@
+{
+    "id": "6fbe26f3-275c-49ff-a12a-606e9ccd68d1",
+    "scriptName": "【日魇协议】括号删除",
+    "findRegex": "/\\s*(\\(.*?\\)|（.*?）)\\s*/g",
+    "replaceString": "",
+    "trimStrings": [],
+    "placement": [
+        2
+    ],
+    "disabled": false,
+    "markdownOnly": true,
+    "promptOnly": true,
+    "runOnEdit": false,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+}
