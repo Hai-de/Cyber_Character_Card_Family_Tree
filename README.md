@@ -1,18 +1,18 @@
-# 我的ai角色卡仓库
+# 我的ai作品仓库
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ---
-仓库建立初衷： 由于我的作品曾在 Discord 频道遭遇误删，为确保我创作成品的安全，我将会把我的东西放到GitHub上面
+仓库建立初衷： 由于我的作品曾在 Discord 频道遭遇误删，为确保我创作成品安全，我将会把我的东西放到GitHub上面
 
 ## 1. 作品目录
 ### 角色卡
 1. 
 ### 预设
-1.
+1. [日魇预设](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设)
 ### 其他
 1.
----
+
 ## 2. 如何提供建议？
    欢迎在 [Issues](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/issues) 区提出想法、建议或报告错别字。
 
@@ -39,7 +39,7 @@
    非商业性使用 (NC) — 您不得将本作品用于商业目的。
    相同方式共享 (SA) — 如果您再混合、转换或者基于本作品进行创作，您必须基于与原先许可协议相同的许可协议分发您贡献的作品。
 
-更多详情请参阅：[Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans)
+> 更多详情请参阅：[Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans)
 
 ## 5. 联系与反馈
 
