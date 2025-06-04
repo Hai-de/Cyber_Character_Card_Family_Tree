@@ -1,0 +1,17 @@
+{
+    "id": "20d05d0d-70fb-4c36-963b-c24a07311f78",
+    "scriptName": "【日魇协议】多余标点符号删除",
+    "findRegex": "/(。。|。，|，。|，，)/g",
+    "replaceString": "。",
+    "trimStrings": [],
+    "placement": [
+        2
+    ],
+    "disabled": false,
+    "markdownOnly": true,
+    "promptOnly": true,
+    "runOnEdit": false,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+}
