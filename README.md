@@ -43,6 +43,6 @@
 
 ## 5. 联系与反馈
 
-   GitHub Issues: 如有任何问题、建议、BUG反馈或相关讨论，欢迎在本仓库的 [Issues](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/issues) 区提出。
-   作者： [特里丰/jfishfih] (https://github.com/Hai-de)
+    如有任何问题、建议、BUG反馈或相关讨论，欢迎在本仓库的 [Issues](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/issues)区提出。
+    作者： [特里丰/jfishfih](https://github.com/Hai-de)
 ---
