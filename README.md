@@ -1,4 +1,4 @@
-# 我的ai作品仓库
+# 我与ai赛博生活仓库
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
@@ -7,22 +7,20 @@
 
 ## 1. 作品目录
 ### 角色卡
-1. 
+1. [我最爱的哥哥姐姐绝对不可能被狐狸精勾走]()
+2. [黑客帝国5―矩阵迭代]()
 ### 预设
 1. [日魇预设](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设)
+### 世界书
+1. 
 ### 其他
-1.
+1. user人设-[貓娘-神月奈美]()
+2. 软文-[替代酒馆]()
 
 ## 2. 如何提供建议？
    欢迎在 [Issues](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/issues) 区提出想法、建议或报告错别字。
 
-## 3. 文件结构 (暂定)
-.
-├── README.md # 本介绍文件
-├── LICENSE # 许可证文件
-
-
-## 4. 许可协议
+## 3. 许可协议
 
 本项目下的所有原创内容均采用 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议 (CC BY-NC-SA 4.0) 进行许可。
 
@@ -41,7 +39,7 @@
 
 > 更多详情请参阅：[Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans)
 
-## 5. 联系与反馈
+## 4. 联系与反馈
 
    作者： [特里丰/jfishfih](https://github.com/Hai-de)
 
