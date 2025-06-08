@@ -4,6 +4,7 @@
 
 ---
 仓库建立初衷： 由于我的作品曾在 Discord 频道遭遇误删，为确保我创作成品安全，我将会把我的东西放到GitHub上面
+现在: 账号jfishfih已被永封
 
 ## 1. 作品目录
 ### 角色卡
@@ -41,6 +42,6 @@
 
 ## 4. 联系与反馈
 
-   作者： [特里丰/jfishfih](https://github.com/Hai-de)
+   作者： [特里丰](https://github.com/Hai-de)~~jfishfih~~
 
 ---
