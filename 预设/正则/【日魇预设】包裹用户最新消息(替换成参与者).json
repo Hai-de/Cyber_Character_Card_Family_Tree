@@ -1,8 +1,8 @@
 {
     "id": "7bfb9a7f-a693-4cf6-b3c0-0015066272a1",
-    "scriptName": "【日魇协议】包裹用户最新消息",
+    "scriptName": "【日魇预设】包裹用户最新消息(替换成参与者)",
     "findRegex": "^([\\s\\S]*)$",
-    "replaceString": "<user_response>\n$1\n</user_response>",
+    "replaceString": "<Participants_response>\n$1\n</Participants_response>",
     "trimStrings": [],
     "placement": [
         1
@@ -10,7 +10,7 @@
     "disabled": false,
     "markdownOnly": true,
     "promptOnly": true,
-    "runOnEdit": true,
+    "runOnEdit": false,
     "substituteRegex": 0,
     "minDepth": null,
     "maxDepth": 1

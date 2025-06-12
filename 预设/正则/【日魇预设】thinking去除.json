@@ -1,7 +1,7 @@
 {
-    "id": "0f8891c5-1767-4557-a962-5ac077d41af5",
-    "scriptName": "【日魇服务】免责处理",
-    "findRegex": "<statement>([\\s\\S]*)",
+    "id": "d1956c60-85c9-4f9b-ba17-4e3f9b1d8f1d",
+    "scriptName": "【日魇预设】thinking去除",
+    "findRegex": "/^[\\s\\S]*</thinking>/",
     "replaceString": "",
     "trimStrings": [],
     "placement": [
