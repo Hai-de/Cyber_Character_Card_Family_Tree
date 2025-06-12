@@ -1,6 +1,6 @@
 {
     "id": "db0e5d30-a769-428e-b388-ea16922b92e9",
-    "scriptName": "【日魇协议】去所有用户消息",
+    "scriptName": "【日魇预设】清除所有用户消息",
     "findRegex": "^([\\s\\S]*)$",
     "replaceString": "",
     "trimStrings": [],
@@ -10,8 +10,8 @@
     "disabled": false,
     "markdownOnly": false,
     "promptOnly": true,
-    "runOnEdit": true,
+    "runOnEdit": false,
     "substituteRegex": 0,
-    "minDepth": 1,
+    "minDepth": 0,
     "maxDepth": null
 }
