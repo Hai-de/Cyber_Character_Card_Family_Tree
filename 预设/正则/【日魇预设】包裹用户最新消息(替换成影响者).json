@@ -1,8 +1,8 @@
 {
     "id": "7bfb9a7f-a693-4cf6-b3c0-0015066272a1",
-    "scriptName": "【日魇预设】包裹用户最新消息(替换成参与者)",
+    "scriptName": "【日魇预设】包裹用户最新消息(替换成影响者)",
     "findRegex": "^([\\s\\S]*)$",
-    "replaceString": "<Participants_response>\n$1\n</Participants_response>",
+    "replaceString": "<Influencer_Directives>\n$1\n</Influencer_Directives>",
     "trimStrings": [],
     "placement": [
         1
