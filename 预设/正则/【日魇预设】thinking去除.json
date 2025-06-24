@@ -1,7 +1,7 @@
 {
     "id": "d1956c60-85c9-4f9b-ba17-4e3f9b1d8f1d",
     "scriptName": "【日魇预设】thinking去除",
-    "findRegex": "/^[\\s\\S]*</Narrative_Interpretation>/",
+    "findRegex": "/^[\\s\\S]*</thinking>/",
     "replaceString": "",
     "trimStrings": [],
     "placement": [
