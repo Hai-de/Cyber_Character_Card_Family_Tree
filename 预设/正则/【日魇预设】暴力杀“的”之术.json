@@ -1,0 +1,17 @@
+{
+    "id": "aaa77cb1-dd8e-43bb-a9a6-6508d17b8637",
+    "scriptName": "【日魇预设】杀\"的\"之术",
+    "findRegex": "/(的)/g",
+    "replaceString": "",
+    "trimStrings": [],
+    "placement": [
+        2
+    ],
+    "disabled": false,
+    "markdownOnly": true,
+    "promptOnly": true,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+}
