@@ -1,7 +1,7 @@
 {
     "id": "6fbe26f3-275c-49ff-a12a-606e9ccd68d1",
     "scriptName": "【日魇预设】括号删除",
-    "findRegex": "/\\s*(\\(.*?\\)|（.*?）)\\s*/g",
+    "findRegex": "/[ \\t]*(\\(.*?\\)|（.*?）)[ \\t]*/g",
     "replaceString": "",
     "trimStrings": [],
     "placement": [
