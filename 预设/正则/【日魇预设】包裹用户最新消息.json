@@ -1,14 +1,14 @@
 {
     "id": "7bfb9a7f-a693-4cf6-b3c0-0015066272a1",
-    "scriptName": "【日魇预设】包裹用户最新消息(替换成影响者)",
+    "scriptName": "【日魇预设】包裹用户最新消息",
     "findRegex": "^([\\s\\S]*)$",
-    "replaceString": "<Influencer_Directives>\n$1\n</Influencer_Directives>",
+    "replaceString": "<誘いの主_Directives>\n$1\n</誘いの主_Directives>",
     "trimStrings": [],
     "placement": [
         1
     ],
     "disabled": false,
-    "markdownOnly": true,
+    "markdownOnly": false,
     "promptOnly": true,
     "runOnEdit": false,
     "substituteRegex": 0,
