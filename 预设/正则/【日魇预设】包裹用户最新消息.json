@@ -2,7 +2,7 @@
     "id": "7bfb9a7f-a693-4cf6-b3c0-0015066272a1",
     "scriptName": "【日魇预设】包裹用户最新消息",
     "findRegex": "^([\\s\\S]*)$",
-    "replaceString": "<誘いの主_Directives>\n$1\n</誘いの主_Directives>",
+    "replaceString": "<太初無涯紫極扉輝_大道玄音>\n$1\n</太初無涯紫極扉輝_大道玄音>",
     "trimStrings": [],
     "placement": [
         1
