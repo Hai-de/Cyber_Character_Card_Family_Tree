@@ -1,0 +1,41 @@
+{
+    "id": "8835eed2-9571-433e-b8b4-8d4f6a04a5d8",
+    "scriptName": "【日魇预设】直接消除超限内容",
+    "findRegex": "/([\\s\\S]*?)<Horizon_charnel_composite>([\\s\\S]*?)<\\/Horizon_charnel_composite>/g",
+    "replaceString": "$2",
+    "trimStrings": [
+        "隐藏次要范畴",
+        "詭道隱漣",
+        "僊膤桃餮",
+        "太初無涯紫極扉輝",
+        "视域",
+        "视域流转",
+        "ヤンデレ型擬態_蜜壺",
+        "克莱因瓶现象",
+        "克莱因蜜壺",
+        "主观能动性",
+        "匮乏",
+        "圣状",
+        "想象界",
+        "符号界",
+        "象征界",
+        "实在界",
+        "真实界",
+        "符号化",
+        "象征秩序",
+        "穿越幻想",
+        "回溯性构建",
+        "-",
+        "的"
+    ],
+    "placement": [
+        2
+    ],
+    "disabled": false,
+    "markdownOnly": true,
+    "promptOnly": true,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+}
