@@ -12,6 +12,7 @@
 2. [黑客帝国5―矩阵迭代](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/角色卡/黑客帝国5―矩阵迭代.png)
 ### 预设
 1. [日魇预设](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/日魇预设)
+2. [隐迹渐现](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/隐迹渐现)
 ### 世界书
 1. 
 ### 其他
