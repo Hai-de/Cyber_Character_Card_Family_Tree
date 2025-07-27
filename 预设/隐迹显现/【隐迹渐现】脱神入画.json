@@ -492,6 +492,34 @@
             "injection_order": 100,
             "injection_trigger": [],
             "forbid_overrides": false
+        },
+        {
+            "identifier": "4a8592da-9ec4-45ab-98e1-b51d043303db",
+            "system_prompt": false,
+            "enabled": false,
+            "marker": false,
+            "name": "作者: Marinette",
+            "role": "system",
+            "content": "{{//\n- 依据“CC BY-NC-SA 4.0”许可证进行授权\n- 禁止商业化\n}}",
+            "injection_position": 0,
+            "injection_depth": 4,
+            "injection_order": 100,
+            "injection_trigger": [],
+            "forbid_overrides": false
+        },
+        {
+            "identifier": "30e39102-a35d-44a0-86d9-92b54dacedb8",
+            "system_prompt": false,
+            "enabled": false,
+            "marker": false,
+            "name": "前端兼容输出",
+            "role": "system",
+            "content": "\n请内化「涂写意向性」→于「混沌染料罐」中保守获取当下所需染料→从「thinking」中获取涂写指导→以<Horizon_Primary_Retention></Horizon_Primary_Retention>包裹现象展现中文符号视域→检查有无其他标签需要展现\n\n\n{{//\n自己改动Horizon_Primary_Retention标签，以及在\"包裹现象展现中文符号视域→\"后面指出要输出<XXXXX>标签\n\n\n\n}}",
+            "injection_position": 0,
+            "injection_depth": 4,
+            "injection_order": 100,
+            "injection_trigger": [],
+            "forbid_overrides": false
         }
     ],
     "prompt_order": [
@@ -547,6 +575,10 @@
         {
             "character_id": 100001,
             "order": [
+                {
+                    "identifier": "4a8592da-9ec4-45ab-98e1-b51d043303db",
+                    "enabled": false
+                },
                 {
                     "identifier": "d06037a8-2b83-488e-ac3c-363a6e5dff4c",
                     "enabled": true
@@ -649,7 +681,7 @@
                 },
                 {
                     "identifier": "77310834-58b1-4695-8765-3b5adf7e6b86",
-                    "enabled": true
+                    "enabled": false
                 },
                 {
                     "identifier": "257dc3ec-d40f-433f-89dc-79887708c94f",
@@ -694,6 +726,10 @@
                 {
                     "identifier": "2f16101f-2972-419f-bb91-5e1168880e40",
                     "enabled": true
+                },
+                {
+                    "identifier": "30e39102-a35d-44a0-86d9-92b54dacedb8",
+                    "enabled": false
                 },
                 {
                     "identifier": "personaDescription",
