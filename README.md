@@ -14,10 +14,13 @@
 1. [日魇预设](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/日魇预设)
 2. [隐迹渐现](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/隐迹渐现)
 ### 世界书
-1. 
+
 ### 其他
-1. user人设-[貓娘-神月奈美](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/user人设/貓娘-神月奈美.yaml)
-2. 软文-[替代酒馆](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/文章/替代酒馆.md)
+-  user人设-[貓娘-神月奈美](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/user人设/貓娘-神月奈美.yaml)
+- bank-[九畔世界观](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/世界书/九畔世界观-bank.yaml)
+### 文章
+- 软文-[替代酒馆](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/文章/替代酒馆.md)
+- ai翻译−[risu.ai_语法](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/文章/risu.ai_语法_中文翻译.md)
 
 ## 2. 如何提供建议？
    欢迎在 [Issues](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/issues) 区提出想法、建议或报告错别字。
