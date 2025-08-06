@@ -1,0 +1,17 @@
+{
+    "id": "c44bfef7-307c-415a-877a-b9a528dc6e64",
+    "scriptName": "【隐迹渐现】随机结果",
+    "findRegex": "/(<!--\\s*混沌灵感:\\s*)([\\s\\S]*?)(\\s*-->)/g",
+    "replaceString": "",
+    "trimStrings": [],
+    "placement": [
+        2
+    ],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": true,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+}

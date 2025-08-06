@@ -21,6 +21,7 @@
 ### 文章
 - 软文-[替代酒馆](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/文章/替代酒馆.md)
 - ai翻译−[risu.ai_语法](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/文章/risu.ai_语法_中文翻译.md)
+- ai翻译−[risu.ai_语法](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/文章/risu.ai_lua脚本_中文翻译.md)
 
 ## 2. 如何提供建议？
    欢迎在 [Issues](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/issues) 区提出想法、建议或报告错别字。
