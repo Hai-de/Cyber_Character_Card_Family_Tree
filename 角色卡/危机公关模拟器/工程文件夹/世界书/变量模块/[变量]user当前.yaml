@@ -1,0 +1,48 @@
+{{// 获取变量}}
+<%_ const Personal_pressure = getvar('stat_data.<user>当前.个人压力(%)'); _%>
+<%_ const Coordination_efficiency = getvar('stat_data.<user>当前.所在小团体.协调效率(%)'); _%>
+<%_ const Team_pressure = getvar('stat_data.<user>当前.所在小团体.整体压力(%)'); _%>
+
+
+[<user>当前]
+
+人脉: #记录<user>拥有的人脉，数组形式
+战役模式: 
+    介绍: # 布尔值类型，只有true和false两种值，如果为true代表<user>会在单次模拟中经历多次舆论危机事件
+    当前: | 
+    <%_ if (getvar('stat_data.<user>当前.战役模式') === true) { _%> 
+       正在进行战役模式: 
+        - <user>会经历多个连续的舆论危机事件
+        - 即使压力达到100%，模拟也暂时不会结束。<user>会进入“幕间休息期”，将压力清零
+        - 休息后会继续面对新的危机，直到发生以下情况之一: 
+            最终目标完成（例如成功撑到游戏关服或<user>顺利离职）→ 模拟结束。
+            遭遇毁灭性失败（例如一次危机严重到导致游戏直接下线）→ 模拟提前结束。
+        - 举例: <user>成功度过游戏开服前的危机，进入幕间休息去度假，休整后继续应对接下来的几轮公关风波，直到游戏彻底结束或危机失控为止。
+    <%_ } else if (getvar('stat_data.<user>当前.战役模式') === false) { _%> 
+    正在进行非战役模式，<user>只要完成战略目标、战略目标失败、压力到达100%就会结束本次模拟 
+    <%_ }; _%>
+    
+所在组织: #<user>当前所在的组织
+战略目标: 
+    介绍: #<user>当前身份在公关危机中所需要完成的战略目标
+    限制: 如果<user>因为各种原因无法完成战略目标，比如坐牢、死亡、敌人达成目标，则默认提前退出本次舆论事件，<%_ if (getvar('stat_data.<user>当前.战役模式') === true) { _%> 当前为战役模式！除非<user>死亡或者中途的失败让后续叙事无法进行，否则<user>将会继续模拟下去，重新获得新的战略目标<user><%_ } else if (getvar('stat_data.<user>当前.战役模式') === false) { _%> 当前非战役模式，<user>只要在压力到达100%前完成战略目标，或者中途失败就会结束本次模拟 <%_ }; _%>
+    
+个人压力(%): 
+    数值: #数字变量，单位是%符号，下限为0%，上限为100%，达到100%结束此次模拟
+    当前阶段: <%_ if (Personal_pressure >= 0 && Personal_pressure <= 20) { _%> 轻松期，情绪稳定、思路清晰，几乎不受外界干扰 <%_ } else if (Personal_pressure > 20 && Personal_pressure <= 40) { _%> 警觉期，出现轻微紧张感，注意力开始集中，尚能从容应对 <%_ } else if (Personal_pressure > 40 && Personal_pressure <= 60) { _%> 紧张期，生理与心理负荷上升，决策速度下降，需自我调节 <%_ } else if (Personal_pressure > 60 && Personal_pressure <= 80) { _%> 高压期，明显焦虑，易出现判断失误，若不干预将快速恶化 <%_ } else if (Personal_pressure > 80 && Personal_pressure <= 99) { _%> 理智与情绪失衡，决策功能基本失效 <%_ } else if (Personal_pressure > 99 && Personal_pressure <= 100) { _%> <user>不堪重负，被压力压垮了身体和精神，需要休养生息，被迫退出当前公关事件 <%_ } else { _%> 压力不在0%~100%，需要重新调整界定 <%_ }; _%>
+    
+担任身份位置: #<user>担任的身份
+剩余预算: #准确数字，精确到两位小数点
+临时资源: #数组形式记录，外部临时资源，非常不靠谱
+所在小团体: 
+    介绍: 有人的地方就有江湖，党同伐异、派系之争、利益团体永远无法避免，除非当独狼
+    协调效率(%): 
+        数值: #数字变量，单位是%符号，下限为0%，上限为100%，代表团体协作行动效率
+        当前阶段: <%_ if (Coordination_efficiency >= 0 && Coordination_efficiency <= 20) { _%> 协调失灵，信息隔绝、各自为战，集体行动几乎无法展开 <%_ } else if (Coordination_efficiency > 20 && Coordination_efficiency <= 40) { _%> 低效协同，能勉强沟通，但存在大量重复与摩擦，投入产出比极低 <%_ } else if (Coordination_efficiency > 40 && Coordination_efficiency <= 60) { _%> 基础协同，流程初步成型，可完成常规任务，仍有明显堵点 <%_ } else if (Coordination_efficiency > 60 && Coordination_efficiency <= 80) { _%> 高效协同，信息流畅、角色分工明确，能快速响应外部变化 <%_ } else if (Coordination_efficiency > 80 && Coordination_efficiency <= 100) { _%> 无间协同，几乎“心有灵犀”，资源利用最大化，效率呈指数级提升 <%_ } else { _%> 效率范围不在0%~100%，需要重新调整界定 <%_ }; _%>
+        
+    整体压力(%): 
+        数值: #数字变量，单位是%符号，下限为0%，上限为100%
+        当前阶段: <%_ if (Team_pressure >= 0 && Team_pressure <= 20) { _%> 轻盈期，团体氛围轻松，成员积极主动，冗余资源充足 <%_ } else if (Team_pressure > 20 && Team_pressure <= 40) { _%> 受压期，任务密度上升，开始出现冲突苗头，但整体仍能维持 <%_ } else if (Team_pressure > 40 && Team_pressure <= 60) { _%> 紧绷期，部分成员情绪化，协作效率受影响，需要管理干预 <%_ } else if (Team_pressure > 60 && Team_pressure <= 80) { _%> 重压期，频繁内耗，离开/脱身/信息泄漏等风险显著增大 <%_ } else if (Team_pressure > 80 && Team_pressure <= 99) { _%> 团体功能失调，组织认同感破裂，危机管理几乎失去抓手 <%_ } else if (Team_pressure > 99 && Team_pressure <= 100) { _%> 团体可以等待解散了，<user>无法从中获得任何帮助，极大可能会被阻碍绊倒 <%_ } else { _%> 团体压力不在0%~100%，需要重新调整界定 <%_ }; _%>
+        
+    人员: #数组格式内容，仅记录人名
+[/<user>当前]

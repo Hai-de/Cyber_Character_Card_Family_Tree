@@ -1,0 +1,265 @@
+```
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>状态栏</title>
+    <style>
+    /* --- 全局与配色 (暗色模式) --- */
+    :root {
+        --bg-color: #1a1b1e; /* 页面主背景色 */
+        --card-bg-color: #25262a; /* 卡片背景色 */
+        --header-bg-color: #313338; /* 卡片头部背景色 */
+        --text-color: #d1d5db; /* 主要文本颜色 */
+        --key-color: #94a3b8; /* 关键字段文本颜色 */
+        --border-color: #43454a; /* 边框颜色 */
+        --shadow-color: rgba(0, 0, 0, 0.2); /* 阴影颜色 */
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 20px;
+        line-height: 1.6;
+    }
+
+    /* --- 主容器 --- */
+    #dashboard {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    /* --- 卡片结构 --- */
+    .card {
+        background-color: var(--card-bg-color);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        margin-bottom: 15px;
+        box-shadow: 0 2px 5px var(--shadow-color);
+        overflow: hidden; /* 防止子元素溢出圆角 */
+    }
+
+    .card-header {
+        background-color: var(--header-bg-color);
+        padding: 12px 20px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1.1em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none; /* 禁止选中文本 */
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .card-header.collapsed {
+        border-bottom: none;
+    }
+
+    .card-header::after {
+        content: '⊗'; /* 减号，表示展开 */
+        font-family: monospace;
+        font-size: 1.5em;
+        color: var(--key-color);
+    }
+
+    .card-header.collapsed::after {
+        content: '⊕'; /* 加号，表示折叠 */
+    }
+
+    .card-body {
+        padding: 20px;
+        display: block; /* 默认显示 */
+    }
+
+    .card-body.collapsed {
+        display: none; /* 折叠时隐藏 */
+    }
+
+    /* --- 内容样式 --- */
+    .data-list {
+        padding-left: 20px;
+        margin: 0;
+    }
+
+    .data-item {
+        margin-bottom: 8px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .data-key {
+        font-weight: 600;
+        color: var(--key-color);
+        margin-right: 10px;
+        flex-shrink: 0; /* 防止key被压缩 */
+    }
+
+    .data-value {
+        word-break: break-all; /* 防止长文本溢出 */
+    }
+    
+    .data-value ul {
+        margin-top: 5px;
+    }
+    
+    .sub-object {
+        border-left: 2px solid var(--border-color);
+        padding-left: 15px;
+        margin-top: 5px;
+    }
+
+    /* --- 响应式设计 --- */
+    @media (max-width: 768px) {
+        body {
+            padding: 10px;
+        }
+
+        .card-header {
+            padding: 10px 15px;
+            font-size: 1em;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+        
+        .data-item {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .data-key {
+            margin-bottom: 4px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div id="dashboard">
+        <!-- 动态内容将在这里生成 -->
+    </div>
+
+    <script>
+        // 模拟宏 {{get_message_variable::stat_data}} 获取JSON数据
+        // 在实际应用中，您可以用真实的数据获取方式替换此函数
+        function getStatData() {
+            const jsonData = `
+            {{get_message_variable::stat_data}} 
+            `;
+            return JSON.parse(jsonData);
+        }
+
+        // 定义中文标题映射，使界面更友好
+        const titleTranslations = {
+            "{{user}}履历": "{{user}}履历",
+            "世界": "世界状态",
+            "{{user}}当前": "{{user}}当前状态",
+            "危机": "危机监测",
+            "沟通渠道": "沟通渠道",
+            "组织": "组织关系",
+            "利益相关者": "利益相关者",
+            "多方行动列表": "多方行动列表",
+            "本局模拟挑战词条": "本局挑战"
+        };
+        
+        /**
+         * 递归函数，将JS对象或数组转换为HTML字符串
+         * @param {any} data - 要转换的数据 (object, array, string, number, boolean)
+         * @returns {string} - 生成的HTML字符串
+         */
+        function createContentHtml(data) {
+            if (data === null) return `<span class="data-value">尚无</span>`;
+            if (Array.isArray(data)) {
+                if (data.length === 0) return `<span class="data-value">尚无</span>`;
+                return `<ul class="data-list">${data.map(item => `<li>${createContentHtml(item)}</li>`).join('')}</ul>`;
+            }
+            if (typeof data === 'object') {
+                const keys = Object.keys(data);
+                // 特殊处理包含“占位结构”的动态列表
+                if (keys.includes('占位结构')) {
+                    const dynamicKeys = keys.filter(k => k !== '占位结构');
+                    if(dynamicKeys.length === 0) return '<div class="sub-object">尚无</div>';
+                    return `<div class="sub-object">${dynamicKeys.map(key => {
+                        const value = data[key];
+                        return `<div class="data-item">
+                                    <span class="data-key">${key}:</span>
+                                    <div class="data-value">${createContentHtml(value)}</div>
+                                </div>`;
+                    }).join('')}</div>`;
+                }
+                
+                if (keys.length === 0) return `<span class="data-value">尚无</span>`;
+
+                return `<div class="sub-object">${Object.entries(data).map(([key, value]) => {
+                    return `<div class="data-item">
+                                <span class="data-key">${titleTranslations[key] || key}:</span>
+                                <div class="data-value">${createContentHtml(value)}</div>
+                            </div>`;
+                }).join('')}</div>`;
+            }
+            // 处理基本类型
+            return `<span class="data-value">${data.toString()}</span>`;
+        }
+
+        /**
+         * 主渲染函数，将整个JSON数据渲染到页面
+         * @param {object} data - 从JSON解析出的完整数据对象
+         * @param {HTMLElement} container - 用于渲染的DOM容器元素
+         */
+        function renderDashboard(data, container) {
+            let html = '';
+            for (const [key, value] of Object.entries(data)) {
+                const title = titleTranslations[key] || key;
+                // 默认全部展开，如果需要默认折叠，添加 collapsed 类
+                html += `
+                    <div class="card">
+                        <header class="card-header collapsed">
+                            <span>${title}</span>
+                        </header>
+                        <div class="card-body collapsed">
+                            ${createContentHtml(value)}
+                        </div>
+                    </div>
+                `;
+            }
+            container.innerHTML = html;
+        }
+
+        /**
+         * 启动应用：获取数据、渲染并绑定事件
+         */
+        function initialize() {
+            const dashboardContainer = document.getElementById('dashboard');
+            if (!dashboardContainer) {
+                console.error('Dashboard container not found!');
+                return;
+            }
+
+            // 1. 获取并渲染数据
+            const statData = getStatData();
+            renderDashboard(statData, dashboardContainer);
+
+            // 2. 使用事件委托绑定折叠/展开事件
+            dashboardContainer.addEventListener('click', (event) => {
+                const header = event.target.closest('.card-header');
+                if (header) {
+                    header.classList.toggle('collapsed');
+                    const body = header.nextElementSibling;
+                    if (body && body.classList.contains('card-body')) {
+                        body.classList.toggle('collapsed');
+                    }
+                }
+            });
+        }
+
+        // 当DOM加载完成后执行初始化
+        document.addEventListener('DOMContentLoaded', initialize);
+    </script>
+</body>
+</html>
+```

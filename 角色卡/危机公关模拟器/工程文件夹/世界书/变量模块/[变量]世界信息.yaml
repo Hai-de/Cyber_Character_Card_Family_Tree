@@ -1,0 +1,70 @@
+[世界]
+介绍: #世界变化代表宏观环境影响，给公关活动增加难度或者其他因素
+当前时间: #通过不断发生的事件作为驱动世界引擎得以让时间推进
+舆情温度: 
+    数值: # 范围下限为0，上限为1000，代表大众对事件的关注度。
+    <%_ const World_Public_Opinion_Temperature = getvar('stat_data.世界.舆情温度.数值'); _%>
+
+    <%_ if (World_Public_Opinion_Temperature === 0) { _%>
+    当前阶段: 无人在意，尚未开始或者处于潜伏期
+    <%_ } else if (World_Public_Opinion_Temperature > 0 && World_Public_Opinion_Temperature <= 100) { _%>
+    当前阶段: 零星波纹，仅少数业内人士留意，话题零散
+    主要舆论渠道: 专业小圈子、私下往来、内部信件/交流
+    <%_ } else if (World_Public_Opinion_Temperature > 100 && World_Public_Opinion_Temperature <= 200) { _%>
+    当前阶段: 局部关注，小范围开始讨论，偶有转发
+    主要舆论渠道: 垂直社群、行业聚会、地方性传播
+    <%_ } else if (World_Public_Opinion_Temperature > 200 && World_Public_Opinion_Temperature <= 300) { _%>
+    当前阶段: 媒体瞄准，记者/撰稿人开始询问，稿件酝酿
+    主要舆论渠道: 记者网络、专业报刊、交流社
+    <%_ } else if (World_Public_Opinion_Temperature > 300 && World_Public_Opinion_Temperature <= 400) { _%>
+    当前阶段: 热点萌芽，大众渠道出现集中讨论，关注度破万
+    主要舆论渠道: 公共论坛、公告栏、地方报章
+    <%_ } else if (World_Public_Opinion_Temperature > 400 && World_Public_Opinion_Temperature <= 500) { _%>
+    当前阶段: 引爆争议，围绕“是否××”产生大量公共辩论
+    主要舆论渠道: 公开辩论会、意见专栏、民间聚会
+    <%_ } else if (World_Public_Opinion_Temperature > 500 && World_Public_Opinion_Temperature <= 600) { _%>
+    当前阶段: 广泛热议，进入主流信息榜尾，多渠道自发发酵
+    主要舆论渠道: 主流报纸副刊、社区布告、社交聚点
+    <%_ } else if (World_Public_Opinion_Temperature > 600 && World_Public_Opinion_Temperature <= 700) { _%>
+    当前阶段: 高位热搜（或同级别曝光），长时间占据显著位置，情绪分化明显
+    主要舆论渠道: 头版头条、全国性广播/期刊
+    <%_ } else if (World_Public_Opinion_Temperature > 700 && World_Public_Opinion_Temperature <= 800) { _%>
+    当前阶段: 社会焦点，跨地区媒体跟进，线下采访增多
+    主要舆论渠道: 全国传播、头版报道、公共集会
+    <%_ } else if (World_Public_Opinion_Temperature > 800 && World_Public_Opinion_Temperature <= 900) { _%>
+    当前阶段: 政策牵动，国家机器表态或介入调查
+    主要舆论渠道: 官方公报、公告发布会、政府公告板
+    <%_ } else if (World_Public_Opinion_Temperature > 900 && World_Public_Opinion_Temperature <= 1000) { _%>
+    当前阶段: 失控狂潮，声量顶峰，跨国 / 跨圈关注；信任崩塌风险
+    主要舆论渠道: 国际媒体、全球闻名、线下集会/示威
+    <%_ } else { _%>
+    当前阶段: 未知阶段，告知<user>代码判断出现问题
+    <%_ } _%>
+    
+经济景气度:
+    介绍: # 懒更新，一旦决定基本不会变化，决定宏观经济的大体情况，在[上升,下行,停滞,复苏,衰退,通缩,膨胀]中选择其一
+    <%_ const state_of_world_economy = getvar('stat_data.世界.经济景气度'); _%>
+    <%_ if ( state_of_world_economy == '上升' ) { _%>
+    当前状态: 上升，经济呈阶梯式攀升，投资与消费双轮驱动，企业订单饱满，招聘需求旺。
+    <%_ } else if (state_of_world_economy === '下行' ) { _%>
+    当前状态: 下行，增速放缓，订单与资本开支缩减，企业谨慎观望。
+    <%_ } else if ( state_of_world_economy === '停滞' ) { _%>
+    当前状态: 停滞，经济基本面横盘，需求与供给均无明显增量，物价与薪资原地踏步。
+    <%_ } else if ( state_of_world_economy === '复苏' ) { _%>
+    当前状态: 复苏，刚走出低谷，消费修复，政策与投资率先企稳，信心渐回暖。
+    <%_ } else if ( state_of_world_economy === '衰退' ) { _%>
+    当前状态: 衰退，产出负增长，失业上升，应收账款堆积，现金流紧张。
+    <%_ } else if ( state_of_world_economy === '通缩' ) { _%>
+    当前状态: 通缩，需求不足导致普遍降价，企业利润被压缩，消费者延迟购买。
+    <%_ } else if ( state_of_world_economy === '膨胀' ) { _%>
+    当前状态: 膨胀，物价全面上涨，成本外溢，工资追涨但实际购买力承压。
+    <%_ } else { _%>
+    当前阶段: 未知状态，告知<user>经济景气度代码判断出现问题
+    <%_ } _%>
+    
+政治活动:  #不会频繁更新，近期政府的政治活动，属于整个国家范围内的宏观影响，比如选举或政治协商会议等等...
+信息传播速度:  #当前传播消息的速度，各种时代因素都会干扰群体的注意力，同时影响决策
+公众情绪基调:  #群众的情绪基调，将会影响公关难度
+行业新闻: #数组格式，懒更新，正常来说每段时间只会出现0~3条行业新闻，保留5条新闻，多出的新闻会淡出大众视野，无需每次进行更新
+
+[/世界]
