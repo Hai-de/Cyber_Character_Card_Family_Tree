@@ -10,6 +10,7 @@
 ### 角色卡
 1. [我最爱的哥哥姐姐绝对不可能被狐狸精勾走](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/角色卡/我最爱的哥哥姐姐绝对不可能被狐狸精勾走.png)
 2. [黑客帝国5―矩阵迭代](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/角色卡/黑客帝国5―矩阵迭代.png)
+3. [舆论危机公关模拟器](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/角色卡/危机公关模拟器/介绍.md)
 ### 预设
 1. [日魇预设](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/日魇预设)
 2. [隐迹渐现](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/隐迹渐现)
