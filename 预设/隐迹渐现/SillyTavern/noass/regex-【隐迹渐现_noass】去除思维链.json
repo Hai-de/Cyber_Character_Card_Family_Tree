@@ -1,0 +1,17 @@
+{
+    "id": "18138296-212d-4acb-aac8-7e1fd64782be",
+    "scriptName": "【隐迹渐现_noass】去除思维链",
+    "findRegex": "/(^[\\s\\S]*?)<content>/g",
+    "replaceString": "",
+    "trimStrings": [],
+    "placement": [
+        2
+    ],
+    "disabled": false,
+    "markdownOnly": true,
+    "promptOnly": true,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+}
