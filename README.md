@@ -14,6 +14,7 @@
 ### 预设
 1. [日魇预设](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/日魇预设)
 2. [隐迹渐现](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/隐迹渐现)
+3. [须臾](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/须臾之梦)
 ### 世界书
 
 ### 其他
