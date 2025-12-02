@@ -1,10 +1,9 @@
-# 我与ai赛博生活仓库
+# 我与ai赛博接触仓库
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ---
 仓库建立初衷： 由于我的作品曾在 Discord 频道遭遇误删，为确保我创作成品安全，我将会把我的东西放到GitHub上面
-现在: 账号jfishfih已被永封
 
 ## 1. 作品目录
 ### 角色卡
@@ -21,12 +20,12 @@
 -  user人设-[貓娘-神月奈美](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/user人设/貓娘-神月奈美.yaml)
 - bank-[九畔世界观](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/世界书/九畔世界观-bank.yaml)
 ### 文章
-- 软文-[替代酒馆](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/文章/替代酒馆.md)
-- ai翻译−[risu.ai_花括号语法](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/文章/risu.ai_语法_中文翻译.md)
-- ai翻译−[risu.ai_lua语法](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/文章/risu.ai_lua脚本_中文翻译.md)
+- 软文-[泛酒馆对象](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/文章/泛酒馆对象.md)
+- risu-花括号语法−[risu.ai_花括号语法](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/文章/risu.ai_语法_中文翻译.md)
+- risu-lua语法−[risu.ai_lua语法](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/文章/risu.ai_lua脚本_中文翻译.md)
 
 ## 2. 如何提供建议？
-   欢迎在 [Issues](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/issues) 区提出想法、建议或报告错别字。
+   欢迎在 👉🏻[Issues](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/issues) 👈🏻区提出想法、建议或报告错别字。
 
 ## 3. 许可协议
 
@@ -49,8 +48,3 @@
 
 > 更多详情请参阅：[Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans)
 
-## 4. 联系与反馈
-
-   作者： [特里丰](https://github.com/Hai-de)~~jfishfih~~
-
----
