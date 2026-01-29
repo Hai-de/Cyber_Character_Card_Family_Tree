@@ -24,7 +24,8 @@ rimtalk是一个rimworld（边缘世界）的mod，，他可以让小人使用ai
 - 目前暂时不考虑用围绕talk的各种附属mod
 - 尽可能简单？
 
-
 暂时先这样吧
 
 > 不过我认为这个：[RimTalk新版预设，简洁省Token版 ](https://tieba.baidu.com/p/10410868161#) 比我的预设优秀多了，一堆代码判断
+
+下载： [实验预设](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/rimtalk/实验预设.json)
