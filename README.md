@@ -17,7 +17,7 @@
 1. [日魇预设](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/日魇预设)
 2. [隐迹渐现](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/隐迹渐现)
 3. [须臾](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/须臾之梦)
-4. [实验预设](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/rimtalk/实验预设.json)
+4. [实验预设](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/rimtalk/README.md)
 
 ### 世界书
 
@@ -31,7 +31,7 @@
 - 软文-[泛酒馆对象](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/文章/泛酒馆对象.md)
 - risu-花括号语法−[risu.ai_花括号语法](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/文章/risu.ai_语法_中文翻译.md)
 - risu-lua语法−[risu.ai_lua语法](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/文章/risu.ai_lua脚本_中文翻译.md)
-- rimtalk-[预设介绍](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/rimtalk/README.md)-[preset.md](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/rimtalk/preset.md)
+- rimtalk-[preset.md](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/rimtalk/preset.md)
 
 ## 2. 如何提供建议？
 
