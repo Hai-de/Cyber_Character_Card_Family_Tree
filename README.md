@@ -31,7 +31,7 @@
 - 软文-[泛酒馆对象](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/文章/泛酒馆对象.md)
 - risu-花括号语法−[risu.ai_花括号语法](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/文章/risu.ai_语法_中文翻译.md)
 - risu-lua语法−[risu.ai_lua语法](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/blob/main/文章/risu.ai_lua脚本_中文翻译.md)
-- rimtalk-[preset.md]()
+- rimtalk-[预设介绍](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/rimtalk/README.md)-[preset.md](https://github.com/Hai-de/Cyber_Character_Card_Family_Tree/tree/main/预设/rimtalk/preset.md)
 
 ## 2. 如何提供建议？
 
