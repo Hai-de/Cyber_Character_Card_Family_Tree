@@ -1,10 +1,9 @@
-## 须臾
-
+> 声明：本内容仅仅用于研究，下载后请24小时内删除。 本仓库记录提示词工程机制与模型安全观测（红队式研究）。发布用于技术教育与防御性 AI 安全工作。作者不提供、不背书、不从中获利内容服务。
+> Disclaimer: This content is for research purposes only. Please delete it within 24 hours after downloading. This repository documents prompt engineering mechanisms and model safety observations (red-team-style research). It is published for technical education and defensive AI security work. The author does not provide, endorse, or profit from content services.
 ### 前言
 
 简单的预设，为了满足我对于xx控的一己私欲，里面内置了简单的审美定义、弗拉基米尔·纳博科夫的《XXX》风格，唉我的欲念之火
 
-去八股用了[【夏瑾/云瑾】V3.1/Qwen 3预设)](https://discord.com/channels/1134557553011998840/1353870378128244791) 的正则
 
 ## 更新日志
 
@@ -87,3 +86,8 @@
 ### 8-19
 - 修改了系统提示词
 - 由于ds官方修改了agent的功能导致底部伪造ai回答的时候会出现需要回传思维链的报错，现在变成纯粹的用户指令
+
+
+### 8-22
+- 借鉴了隔壁夏瑾的新破限结构
+- 大幅度调整了顶部提示词
