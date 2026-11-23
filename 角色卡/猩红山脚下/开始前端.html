@@ -432,6 +432,27 @@
       gap: 12px;
     }
 
+    .shadow-group-label {
+      grid-column: 1 / -1;
+      margin: 2px 0 0;
+      color: var(--gold);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+    }
+
+    .shadow-group-label:not(:first-child) { margin-top: 10px; }
+
+    .shadow-card.is-pure {
+      border-color: rgba(182, 73, 82, 0.3);
+      background: rgba(182, 73, 82, 0.055);
+    }
+
+    .shadow-card.is-pure:hover {
+      border-color: rgba(182, 73, 82, 0.56);
+      background: rgba(182, 73, 82, 0.08);
+    }
+
     .shadow-card {
       display: flex;
       gap: 11px;
@@ -685,9 +706,9 @@
     <header>
       <h1>猩红山脚下</h1>
       <section class="fixed-opening" id="fixedOpening" aria-label="固定故事开场白">
-        <div class="opening-line">第七天了，雨还没有停。</div>
-        <div class="opening-line">猩红山脚下的町子像一枚被水泡胀的旧印章。屋檐、石阶与远处的山脊都在雨雾里洇成暧昧的暗红色。你抵达时，最后一班驿车已经离开，只剩驿站门口一盏旧灯还亮着。</div>
-        <div class="opening-line">你推门进去，铜铃发出一声沙哑的响。柜台后的人没有立刻抬头，只把一本厚重的名册推到你面前。册页上没有表格，只有一列列被潮气晕开的旧名字。</div>
+        <div class="opening-line">第七天了，山里的雾还是没有散</div>
+        <div class="opening-line">那贴在皮肤上、带着铁锈与烂熟果子腥甜的温热湿气。猩红山脚下的秩聖町像一枚被暖水泡胀的旧印章，屋檐、泥路与远处的山脊都在粉红色的薄雾里洇成暧昧的暗红。你抵达时，本周最后一班通往山外的破旧货车已经调头离开，只剩路口木造案内所前的一盏灯还亮着。</div>
+        <div class="opening-line">你推门进去，门上的旧铜铃发出一声沉闷的响。柜台后的女人穿着没有纽扣、全靠丝带系紧的宽松裙装，她没有立刻抬头，只把一本厚重的名册推到你面前，册页被潮气浸得发软，上面只有一列列被水渍晕开的旧名字。</div>
       </section>
     </header>
 
@@ -711,7 +732,7 @@
               性别代词/认同
               <span class="required">必填</span>
             </label>
-            <input id="identity" name="identity" type="text" placeholder="她/她/他/他/TA/TA/非二元/自由填写/或....." autocomplete="off" required>
+            <input id="identity" name="identity" type="text" placeholder="她/她/他/TA/非二元/自由填写/或....." autocomplete="off" required>
           </div>
 
           <div class="field full">
@@ -719,7 +740,7 @@
               你从哪座城市来？
               <span class="required">必填</span>
             </label>
-            <input id="city" name="city" type="text" placeholder="写下城市、聚落或......" autocomplete="off" required>
+            <input id="city" name="city" type="text" placeholder="东京、大阪、秋田，或某个不愿再回去的地方……" autocomplete="off" required>
           </div>
         </div>
       </section>
@@ -727,10 +748,10 @@
       <section class="section" aria-labelledby="traitHeading">
         <div class="section-head">
           <span class="section-index" aria-hidden="true">02</span>
-          <h2 id="traitHeading">特质<span class="trait-en"> 从以下七项中选择三项</span></h2>
+          <h2 id="traitHeading">特质<span class="trait-en"> 从以下十三项中选择三项</span></h2>
         </div>
 
-        <fieldset class="trait-shell" aria-describedby="traitHelp traitMessage">
+        <fieldset class="trait-shell">
           <legend class="sr-only">选择三项特质</legend>
           <div class="trait-grid">
             <label class="trait-card" data-trait-card="powerful">
@@ -739,9 +760,9 @@
               <span class="trait-body">
                 <span class="trait-title">身强体壮 <span class="trait-en">Powerful Build</span></span>
                 <span class="trait-points">
-                  <span class="trait-point">坚韧如铁，强壮的极致体现</span>
-                  <span class="trait-point">气宇轩昂的气场</span>
-                  <span class="trait-point">一记狠厉的右钩拳</span>
+                  <span class="trait-point">强壮的极致体现，可以把很多东西捏爆</span>
+                  <span class="trait-point">气宇轩昂的气场，让旁人下意识退开半步</span>
+                  <span class="trait-point">一记狠厉的右钩拳，足以终结争执</span>
                 </span>
               </span>
             </label>
@@ -752,8 +773,8 @@
               <span class="trait-body">
                 <span class="trait-title">神秘主义 <span class="trait-en">Mystical</span></span>
                 <span class="trait-points">
-                  <span class="trait-point">奇怪且不寻常</span>
-                  <span class="trait-point">可以用常人无法理解的方式洞察现实本质</span>
+                  <span class="trait-point">奇怪且不寻常，像总与世界隔着一层薄雾</span>
+                  <span class="trait-point">可以用常人无法理解的方式洞察现实的本质</span>
                 </span>
               </span>
             </label>
@@ -764,8 +785,9 @@
               <span class="trait-body">
                 <span class="trait-title">与动物交谈 <span class="trait-en">Talk to Animals</span></span>
                 <span class="trait-points">
-                  <span class="trait-point">可以对动物沟通交流</span>
+                  <span class="trait-point">可以与动物沟通交流</span>
                   <span class="trait-point">是馈赠也是诅咒</span>
+                  <span class="trait-point">能安抚狂躁生物，却总让他人背脊发凉的奇异亲和力</span>
                 </span>
               </span>
             </label>
@@ -776,9 +798,9 @@
               <span class="trait-body">
                 <span class="trait-title">街头智慧 <span class="trait-en">Street Smart</span></span>
                 <span class="trait-points">
-                  <span class="trait-point">很会说谎，难以揭穿</span>
-                  <span class="trait-point">善于言辞，精通人心</span>
-                  <span class="trait-point">门锁不再是阻碍</span>
+                  <span class="trait-point">很会说谎，难以被揭穿</span>
+                  <span class="trait-point">擅长用虚实难辨的话术揣摩人心</span>
+                  <span class="trait-point">门锁与警戒都不再是阻碍</span>
                 </span>
               </span>
             </label>
@@ -789,8 +811,8 @@
               <span class="trait-body">
                 <span class="trait-title">洞察力 <span class="trait-en">Keen Eye</span></span>
                 <span class="trait-points">
-                  <span class="trait-point">观察能力敏锐，善于捕捉细微之处</span>
-                  <span class="trait-point">富有同理心</span>
+                  <span class="trait-point">观察能力敏锐，善于捕捉他人忽略的细微之处</span>
+                  <span class="trait-point">富有同理心，能读懂沉默背后的情绪</span>
                 </span>
               </span>
             </label>
@@ -801,9 +823,9 @@
               <span class="trait-body">
                 <span class="trait-title">书籍智慧 <span class="trait-en">Book Smart</span></span>
                 <span class="trait-points">
-                  <span class="trait-point">博学且理智</span>
+                  <span class="trait-point">博学且理智，习惯把恐惧拆解成可以理解的名词</span>
                   <span class="trait-point">拥有丰富的知识，并且知道何时使用</span>
-                  <span class="trait-point">才华横溢的学者</span>
+                  <span class="trait-point">才华横溢的学者，能在故纸堆里找到别人忽略的答案</span>
                 </span>
               </span>
             </label>
@@ -814,9 +836,85 @@
               <span class="trait-body">
                 <span class="trait-title">火辣 <span class="trait-en">Hot</span></span>
                 <span class="trait-points">
-                  <span class="trait-point">极其好看</span>
-                  <span class="trait-point">天生的调情高手</span>
+                  <span class="trait-point">极其好看，软筋裹束起内在粉嫩鲜肉，外用透红细腻的皮肤包覆</span>
+                  <span class="trait-point">天生的调情高手，已臻顶点，往后只有衰落，但没有往后……</span>
                   <span class="trait-point">人们都喜欢，大概因为是好人吧</span>
+                </span>
+              </span>
+            </label>
+
+            <label class="trait-card" data-trait-card="irrational">
+              <input class="trait-input" type="checkbox" name="trait" value="irrational">
+              <span class="trait-marker" aria-hidden="true"></span>
+              <span class="trait-body">
+                <span class="trait-title">非理性想象 <span class="trait-en">Irrational Imagination</span></span>
+                <span class="trait-points">
+                  <span class="trait-point">想象猛烈且栩栩如生，画面、声音与气味仿佛触手可及</span>
+                  <span class="trait-point">能把不存在的事物讲得比现实更像真的</span>
+                  <span class="trait-point">在绝境中，想象会为你打开一扇不合常理的门</span>
+                </span>
+              </span>
+            </label>
+
+            <label class="trait-card" data-trait-card="mercurial">
+              <input class="trait-input" type="checkbox" name="trait" value="mercurial">
+              <span class="trait-marker" aria-hidden="true"></span>
+              <span class="trait-body">
+                <span class="trait-title">飘忽不定 <span class="trait-en">Mercurial</span></span>
+                <span class="trait-points">
+                  <span class="trait-point">念头与情绪像风中的灯火，永远比困境先一步改变方向</span>
+                  <span class="trait-point">对突发变化有近乎本能的适应力，总能在缝隙里找到新路</span>
+                </span>
+              </span>
+            </label>
+
+            <label class="trait-card" data-trait-card="lucky">
+              <input class="trait-input" type="checkbox" name="trait" value="lucky">
+              <span class="trait-marker" aria-hidden="true"></span>
+              <span class="trait-body">
+                <span class="trait-title">全凭好运 <span class="trait-en">Lucky One</span></span>
+                <span class="trait-points">
+                  <span class="trait-point">命运似乎总在最后一刻站到你这边</span>
+                  <span class="trait-point">危险与你擦肩而过，坏事常常阴差阳错地变成好事</span>
+                  <span class="trait-point">你不必知道为什么，只要相信下一次也会这么幸运</span>
+                </span>
+              </span>
+            </label>
+
+            <label class="trait-card" data-trait-card="maverick">
+              <input class="trait-input" type="checkbox" name="trait" value="maverick">
+              <span class="trait-marker" aria-hidden="true"></span>
+              <span class="trait-body">
+                <span class="trait-title">特立独行 <span class="trait-en">Maverick</span></span>
+                <span class="trait-points">
+                  <span class="trait-point">不随人群改变方向，永远按自己的步调前进</span>
+                  <span class="trait-point">当所有人失去判断时，仍能坚持自己的选择</span>
+                </span>
+              </span>
+            </label>
+
+            <label class="trait-card" data-trait-card="ambition">
+              <input class="trait-input" type="checkbox" name="trait" value="ambition">
+              <span class="trait-marker" aria-hidden="true"></span>
+              <span class="trait-body">
+                <span class="trait-title">野心勃发 <span class="trait-en">Rising Ambition</span></span>
+                <span class="trait-points">
+                  <span class="trait-point">硕果累累的野心之潮：我将升得更高，受到同侪尊敬，被对手诋毁</span>
+                  <span class="trait-point">我将习惯听见自己的名字在各处响起</span>
+                  <span class="trait-point">永远知道下一个更高的位置在哪里</span>
+                </span>
+              </span>
+            </label>
+
+            <label class="trait-card" data-trait-card="paranoid">
+              <input class="trait-input" type="checkbox" name="trait" value="paranoid">
+              <span class="trait-marker" aria-hidden="true"></span>
+              <span class="trait-body">
+                <span class="trait-title">疑心暗起 <span class="trait-en">Creeping Suspicion</span></span>
+                <span class="trait-points">
+                  <span class="trait-point">对恶意、跟踪与隐瞒有近乎本能的敏感</span>
+                  <span class="trait-point">能提前察觉不对劲的细节，不易被表象骗过</span>
+                  <span class="trait-point">“我是不是正被人盯梢？”——而答案往往不是空穴来风</span>
                 </span>
               </span>
             </label>
@@ -832,14 +930,14 @@
       <section class="section" aria-labelledby="shadowHeading">
         <div class="section-head">
           <span class="section-index" aria-hidden="true">03</span>
-          <h2 id="shadowHeading">负面特质<span class="trait-en"> 强化三项特质中一项的阴暗面</span></h2>
+          <h2 id="shadowHeading">负面特质<span class="trait-en"> 选择一项阴暗面，或一项无需前置条件的纯粹负面特质</span></h2>
         </div>
 
         <div class="locked-state" id="shadowLocked">
-          <strong>尚未解锁</strong>
+          <strong>尚未选择</strong> 
         </div>
 
-        <fieldset class="trait-shell" id="shadowFieldset" hidden aria-describedby="shadowHelp">
+        <fieldset class="trait-shell" id="shadowFieldset">
           <legend class="sr-only">选择一项负面特质</legend>
           <div class="shadow-grid" id="shadowOptions"></div>
         </fieldset>
@@ -857,9 +955,9 @@
         <h2 id="resultHeading">背景已生成</h2>
         <p class="result-note">复制下方文本并发送</p>
       </div>
-      <textarea class="result-text" id="resultText" readonly spellcheck="false" aria-label="生成的纯文本背景档案"></textarea>
+      <textarea class="result-text" id="resultText" readonly spellcheck="false" aria-label="生成的背景档案"></textarea>
       <div class="result-actions">
-        <button class="button button-primary" type="button" id="copyButton">复制</button>
+        <button class="button button-primary" type="button" id="copyButton">复制档案</button>
       </div>
     </section>
     <p class="sr-only" id="liveRegion" role="status" aria-live="polite"></p>
@@ -897,72 +995,144 @@
           name: '身强体壮',
           en: 'Powerful Build',
           points: [
-            '坚韧如铁，强壮的极致体现',
-            '气宇轩昂的气场',
-            '一记狠厉的右钩拳'
+            '强壮的极致体现，可以把很多东西捏爆',
+            '气宇轩昂的气场，让旁人下意识退开半步',
+            '一记狠厉的右钩拳，足以终结争执'
           ],
-          shadow: '力量先于理智，很难在被冒犯、被阻拦或面对威胁时收住手，一次本意克制的推搡也可能造成不可逆的伤害，身体的强大容易变成压迫与破坏，也可能开始享受这种支配感和周围人畏惧的感觉'
+          shadow: '谷底过浓的湿热与腥甜气息最先点燃的正是你过剩的精力。当理智在高温与幻觉中融化，肌肉的暴力与原始本能会先于思考爆发，身体的强大容易变成压迫与破坏'
         },
         mystical: {
           name: '神秘主义',
           en: 'Mystical',
           points: [
-            '奇怪且不寻常',
-            '可以用常人无法理解的方式洞察现实本质'
+            '奇怪且不寻常，像总与世界隔着一层薄雾',
+            '可以用常人无法理解的方式洞察现实的本质'
           ],
-          shadow: '看见的“真相”不断磨损常识与边界，低语、幻象与预兆可能难辨真假，越接近现实的本质就越难回到普通人的生活；有时做出的决定，在旁人看来已经近乎疯狂'
+          shadow: '看见的东西不断磨损常识与边界，低语、幻象与预兆可能难辨真假，越接近现实的本质就越难回到普通人的生活；有时做出的决定，在旁人看来已经近乎疯狂'
         },
         animals: {
           name: '与动物交谈',
           en: 'Talk to Animals',
           points: [
-            '可以对动物沟通交流',
-            '是馈赠也是诅咒'
+            '可以与动物沟通交流',
+            '是馈赠也是诅咒',
+            '能安抚狂躁生物，却总让他人背脊发凉的奇异亲和力'
           ],
-          shadow: '动物的恐惧、饥饿与本能不断涌入意识，开始倾向于用兽群的方式理解关系，对人类社会的规则变得迟钝；有时甚至分不清哪些冲动属于自己，哪些来自于交谈的生灵'
+          shadow: '当你俯下身倾听，灌进耳朵的全是产仔数窝的生物在发情期的嘶鸣、狂热以及交配冲动，它们毫不掩饰地把你当成同类或温床'
         },
         street: {
           name: '街头智慧',
           en: 'Street Smart',
           points: [
-            '很会说谎，难以揭穿',
-            '善于言辞，精通人心',
-            '门锁不再是阻碍'
+            '很会说谎，难以被揭穿',
+            '擅长用虚实难辨的话术揣摩人心',
+            '门锁与警戒都不再是阻碍'
           ],
-          shadow: '太擅长操纵与伪装，最后连自己都分不清真话。当真正需要坦白时，别人已经不再相信；而本能仍然是继续编织下一句谎言，直到把重要的人也困进去'
+          shadow: '太擅长操纵与伪装，最后连自己都分不清真话。当真正需要坦白时，别人已经不再相信'
         },
         keen: {
           name: '洞察力',
           en: 'Keen Eye',
           points: [
-            '观察能力敏锐，善于捕捉细微之处',
-            '富有同理心'
+            '观察能力敏锐，善于捕捉他人忽略的细微之处',
+            '富有同理心能读懂背后的情绪'
           ],
-          shadow: '无法停止观察与共情，每处破绽、每份痛苦都同时压来，过度解读可能会疲惫、多疑，也可能把旁人的隐私视为可用的破口。看见的越多越难对眼前的人保持温柔'
+          shadow: '无法停止观察与共情，每处破绽、每份痛苦都同时压来，过度解读可能会疲惫、多疑，也可能把旁人的隐私视为可用的破口'
         },
         book: {
           name: '书籍智慧',
           en: 'Book Smart',
           points: [
-            '博学且理智',
+            '博学且理智，习惯把遭遇拆解成可以理解的内容',
             '拥有丰富的知识，并且知道何时使用',
-            '才华横溢的学者'
+            '才华横溢的学者，能在故纸堆里找到别人忽略的答案'
           ],
-          shadow: '相信知识能解释一切，也相信自己总比旁人更早看见答案。面对未知时你容易傲慢、钻牛角尖，把活人当成案例；当书本与现实冲突，可能会为了证明理论而伤害真正需要帮助的人'
+          shadow: '相信知识能解释一切，也相信自己总比旁人更早看见答案。面对未知时你容易傲慢、钻牛角尖，把活人当成案例'
         },
         hot: {
           name: '火辣',
           en: 'Hot',
           points: [
-            '极其好看',
-            '天生的调情高手',
+            '极其好看，软筋裹束起内在粉嫩鲜肉，外用透红细腻的皮肤包覆',
+            '天生的调情高手，已到达顶点往后只有衰落，但没有往后……',
             '人们都喜欢，大概因为是好人吧'
           ],
           shadow: '习惯被注视、被偏爱、被原谅，于是把吸引力当成武器而不自知。试探别人的底线享受被争夺，却在真正靠近时露出虚荣、占有欲或控制；别人的喜欢也可能变成纠缠与嫉恨'
+        },
+        irrational: {
+          name: '非理性想象',
+          en: 'Irrational Imagination',
+          points: [
+            '想象猛烈且栩栩如生，画面、声音与气味仿佛触手可及',
+            '能把不存在的事物讲得比现实更像真的',
+            '在绝境中，想象会为你打开一扇不合常理的门'
+          ],
+          shadow: '想象不再受你控制。破碎的画面、声音与身份彼此混淆，恐惧与狂喜同时涌入；你甚至会在四分五裂的幻觉里感到欢乐'
+        },
+        mercurial: {
+          name: '飘忽不定',
+          en: 'Mercurial',
+          points: [
+            '念头与情绪像风中的灯火，永远比困境先行改变方向',
+            '对突发变化有近乎本能的适应力，总能在缝隙里找到新路'
+          ],
+          shadow: '你也被自己的无常牵着走。承诺、立场与记忆像潮水一样退去，同行者抓不住你，你也抓不住自己'
+        },
+        lucky: {
+          name: '全凭好运',
+          en: 'Lucky One',
+          points: [
+            '好运似乎总在最后时刻站在身边',
+            '危险经常擦肩而过，坏事常常阴差阳错地变成好事',
+            '不必知道为什么，反正下次也会这么幸运'
+          ],
+          shadow: '幸运开始以别人为代价，越被命运偏爱，身边人越容易被无妄之灾波及；嫉妒、怨恨与替罪羊的目光如影随形'
+        },
+        maverick: {
+          name: '特立独行',
+          en: 'Maverick',
+          points: [
+            '不随人群改变方向，永远按自己的步调前进',
+            '当所有人失去判断时，仍能坚持自己的选择'
+          ],
+          shadow: '步调最终变成无法与任何人同行的固执，不再听见劝告，把孤立当作代价，意志就是原则；当世界需要妥协时依然只会走自己的路。'
+        },
+        ambition: {
+          name: '野心勃发',
+          en: 'Rising Ambition',
+          points: [
+            '硕果累累的野心之潮：我将升得更高，受到同侪尊敬，被对手诋毁',
+            '我将习惯听见自己的名字在各处响起',
+            '永远知道下一个更高的位置在哪里'
+          ],
+          shadow: '饥饿……融解。欲望像永不满足的饥饿，把原则、关系与自我一点点融解；为了再高一级，你可以毫无负担地牺牲任何人'
+        },
+        paranoid: {
+          name: '疑心暗起',
+          en: 'Creeping Suspicion',
+          points: [
+            '对恶意、跟踪与隐瞒有近乎本能的敏感',
+            '能提前察觉不对劲的细节，不易被表象骗过',
+            '“我是不是正被人盯梢？”'
+          ],
+          shadow: '周围人想要害你，确定无疑这念头不再需要证据。你从每个眼神里读出了歹毒和残忍，善意就是伪装，必须先下手为强；站在你身边的人也是敌人'
         }
       };
 
-      const TRAIT_ORDER = ['powerful', 'mystical', 'animals', 'street', 'keen', 'book', 'hot'];
+      const PURE_NEGATIVE_TRAITS = {
+        bloodAffliction: {
+          name: '无助之血',
+          en: 'Afflicted Blood',
+          shadow: '血液有恙，身体长期虚弱不适。唯有品食同类血肉、饮下同类的血液，才能获得短暂而愉悦的玉液琼浆'
+        },
+        fadedColor: {
+          name: '已逝之色',
+          en: 'Faded Colors',
+          shadow: '眼中世界只剩黑白与深浅不一的灰……全色盲？！'
+        }
+      };
+
+      const TRAIT_ORDER = ['powerful', 'mystical', 'animals', 'street', 'keen', 'book', 'hot', 'irrational', 'mercurial', 'lucky', 'maverick', 'ambition', 'paranoid'];
 
       function setStatus(element, message, tone) {
         if (element) {
@@ -1056,53 +1226,55 @@
         shadowFieldset.removeAttribute('aria-invalid');
       }
 
+      function appendShadowOption(key, trait, isPure, previous) {
+        const label = document.createElement('label');
+        label.className = 'shadow-card' + (isPure ? ' is-pure' : '');
+
+        const input = document.createElement('input');
+        input.className = 'shadow-input';
+        input.type = 'radio';
+        input.name = 'shadowTrait';
+        input.value = key;
+        input.checked = previous === key;
+
+        const body = document.createElement('span');
+        body.className = 'shadow-body';
+
+        const title = document.createElement('span');
+        title.className = 'shadow-title';
+        title.textContent = isPure ? trait.name : trait.name + '的阴暗面';
+
+        const desc = document.createElement('span');
+        desc.className = 'shadow-desc';
+        desc.textContent = trait.shadow;
+
+        body.append(title, desc);
+        label.append(input, body);
+        shadowOptions.append(label);
+      }
+
       function renderShadowOptions() {
         const selected = selectedTraitKeys();
         const previous = selectedShadowKey();
+        const hasThree = selected.length === 3;
         clearShadowInvalid();
+        shadowOptions.replaceChildren();
+        shadowLocked.hidden = hasThree;
 
-        if (selected.length !== 3) {
-          shadowLocked.hidden = false;
-          shadowFieldset.hidden = true;
-          shadowOptions.replaceChildren();
-          return;
+        if (hasThree) {
+          const derivedLabel = document.createElement('div');
+          derivedLabel.className = 'shadow-group-label';
+          derivedLabel.textContent = '源自已选特质的阴暗面';
+          shadowOptions.append(derivedLabel);
+          selected.forEach(key => appendShadowOption(key, TRAITS[key], false, previous));
         }
 
-        shadowLocked.hidden = true;
-        shadowFieldset.hidden = false;
-        shadowOptions.replaceChildren();
-
-        selected.forEach(key => {
-          const trait = TRAITS[key];
-          const label = document.createElement('label');
-          label.className = 'shadow-card';
-
-          const input = document.createElement('input');
-          input.className = 'shadow-input';
-          input.type = 'radio';
-          input.name = 'shadowTrait';
-          input.value = key;
-          input.checked = previous === key;
-
-          const body = document.createElement('span');
-          body.className = 'shadow-body';
-
-          const title = document.createElement('span');
-          title.className = 'shadow-title';
-          title.textContent = trait.name + '的阴暗面 ';
-
-          // const en = document.createElement('span');
-          // en.className = 'shadow-en';
-          // en.textContent = trait.en;
-
-          const desc = document.createElement('span');
-          desc.className = 'shadow-desc';
-          desc.textContent = trait.shadow;
-
-          // title.append(en);
-          body.append(title, desc);
-          label.append(input, body);
-          shadowOptions.append(label);
+        const pureLabel = document.createElement('div');
+        pureLabel.className = 'shadow-group-label';
+        pureLabel.textContent = '纯粹负面特质';
+        shadowOptions.append(pureLabel);
+        Object.entries(PURE_NEGATIVE_TRAITS).forEach(([key, trait]) => {
+          appendShadowOption(key, trait, true, previous);
         });
       }
 
@@ -1155,7 +1327,8 @@
         const city = textOf('city');
         const selected = selectedTraitKeys();
         const shadowKey = selectedShadowKey();
-        const shadow = shadowKey ? TRAITS[shadowKey] : undefined;
+        const pureShadow = shadowKey ? PURE_NEGATIVE_TRAITS[shadowKey] : undefined;
+        const shadow = shadowKey ? (TRAITS[shadowKey] || pureShadow) : undefined;
 
         const openingText = getOpeningText();
         const lines = [
@@ -1193,7 +1366,8 @@
         );
 
         if (shadowKey && shadow) {
-          lines.push('### ' + shadow.name + '/' + shadow.en + '的阴暗面');
+          const shadowKind = pureShadow ? ' — 纯粹负面特质' : '的阴暗面';
+          lines.push('### ' + shadow.name + '/' + shadow.en + shadowKind);
           lines.push('');
           lines.push(shadow.shadow);
           lines.push('');
