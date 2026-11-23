@@ -1374,10 +1374,16 @@
         }
 
         lines.push(
-          '## 后续写入 State 说明',
-          '',
-          '- 请在故事开始后，按当前预设实际提供的State工具、Schema、路径写入。',
-          '- 如果当前没有明确的State Schema、写入路径，请保留本档案作为文本上下文，不要自行编造字段或路径',
+          '## 后续写入 State 指引',
+          '1. 解析姓名、代词、城市、三项特质和一项负面特质。',
+          '2. 将三项特质分别写成 `trait_1`、`trait_2`、`trait_3`',
+          '3. 写入 `negative_trait`',
+          '4. 根据来源写入：',
+          '   - `negative_trait_kind: "derived"` 或 `"pure"`',
+          '   - `negative_trait_source`：derived 时填来源特质，pure 时填空字符串。',
+          '5. 写入 `background_notes`。',
+          '6. 最后把 `completed` 设为 `true`。',
+          '7. 此后这组字段视为只读，不再随剧情更新。',
           '',
         );
 

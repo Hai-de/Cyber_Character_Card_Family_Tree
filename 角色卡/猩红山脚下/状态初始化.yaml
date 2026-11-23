@@ -1,0 +1,509 @@
+# 猩红山脚下 · Loom Studio State 初始化
+# 可直接粘贴到角色卡的 State 配置编辑器中。
+# 玩家 Entity / loom_profile 是 Loom Studio 内置项，不要在这里重复声明。
+# player.constants 是供 Prompt 宏读取的只读常量；NPC 与时间地点仍为运行态 State。
+
+stateTemplates:
+- id: player.constants
+  templateVersion: 1
+  label: 玩家常量（宏来源）
+  schema:
+    type: object
+    title: 玩家常量
+    description: 开始游戏后视为只读的玩家常量；通过 Timeline State 宏稳定注入 Prompt。
+    additionalProperties: false
+    required:
+    - completed
+    - pronouns
+    - city
+    - trait_1
+    - trait_2
+    - trait_3
+    - negative_trait
+    - negative_trait_kind
+    - negative_trait_source
+    - background_notes
+    properties:
+      completed:
+        type: boolean
+        title: 是否完成初始化
+      pronouns:
+        type: string
+        maxLength: 120
+        title: 性别代词 / 性别认同
+      city:
+        type: string
+        maxLength: 120
+        title: 来自城市
+      trait_1:
+        type: string
+        maxLength: 1200
+        title: 特质一
+      trait_2:
+        type: string
+        maxLength: 1200
+        title: 特质二
+      trait_3:
+        type: string
+        maxLength: 1200
+        title: 特质三
+      negative_trait:
+        type: string
+        maxLength: 1200
+        title: 负面特质
+      negative_trait_kind:
+        type: string
+        enum:
+        - ''
+        - derived
+        - pure
+        title: 负面特质类型
+      negative_trait_source:
+        type: string
+        maxLength: 200
+        title: 负面特质来源
+      background_notes:
+        type: string
+        maxLength: 4000
+        title: 其他背景备注
+  initial:
+    completed: false
+    pronouns: ''
+    city: ''
+    trait_1: ''
+    trait_2: ''
+    trait_3: ''
+    negative_trait: ''
+    negative_trait_kind: ''
+    negative_trait_source: ''
+    background_notes: ''
+- id: npc.profile
+  templateVersion: 1
+  label: NPC 角色档案
+  componentKey: profile
+  targetEntityTypeIds:
+  - npc
+  schema:
+    type: object
+    title: NPC 角色档案
+    description: NPC 的静态档案与少量运行态字段。
+    additionalProperties: false
+    required:
+    - name
+    - age
+    - role
+    - faction
+    - summary
+    - personality_axes
+    - coexistence_note
+    - relationship_to_player
+    - status
+    - current_goal
+    - notes
+    properties:
+      name:
+        type: string
+        maxLength: 120
+        title: 姓名
+      age:
+        type: integer
+        minimum: 0
+        maximum: 300
+        title: 年龄
+      role:
+        type: string
+        maxLength: 160
+        title: 身份 / 职业
+      faction:
+        type: string
+        enum:
+        - 北条家
+        - 今川家
+        - 神月家
+        - 瑞穗集团
+        - 町民
+        - 外来者
+        - 其他
+        title: 阵营 / 归属
+      summary:
+        type: string
+        maxLength: 500
+        title: 简介
+      personality_axes:
+        type: object
+        title: 人格轴
+        additionalProperties: false
+        required:
+        - open
+        - closed
+        - bold
+        - passive
+        - insightful
+        - dull
+        - reliable
+        - unreliable
+        - agreeable
+        - adversarial
+        properties:
+          open:
+            type: integer
+            minimum: 0
+            maximum: 10
+          closed:
+            type: integer
+            minimum: 0
+            maximum: 10
+          bold:
+            type: integer
+            minimum: 0
+            maximum: 10
+          passive:
+            type: integer
+            minimum: 0
+            maximum: 10
+          insightful:
+            type: integer
+            minimum: 0
+            maximum: 10
+          dull:
+            type: integer
+            minimum: 0
+            maximum: 10
+          reliable:
+            type: integer
+            minimum: 0
+            maximum: 10
+          unreliable:
+            type: integer
+            minimum: 0
+            maximum: 10
+          agreeable:
+            type: integer
+            minimum: 0
+            maximum: 10
+          adversarial:
+            type: integer
+            minimum: 0
+            maximum: 10
+      coexistence_note:
+        type: string
+        maxLength: 500
+        title: 人格轴共存说明
+      relationship_to_player:
+        type: integer
+        minimum: -10
+        maximum: 10
+        title: 对玩家关系值
+      status:
+        type: string
+        enum:
+        - active
+        - missing
+        - dead
+        - transformed
+        - unknown
+        title: 当前状态
+      current_goal:
+        type: string
+        maxLength: 300
+        title: 当前目标
+      notes:
+        type: string
+        maxLength: 1000
+        title: 运行备注
+  initial:
+    name: 未命名NPC
+    age: 0
+    role: ''
+    faction: 其他
+    summary: ''
+    personality_axes:
+      open: 5
+      closed: 5
+      bold: 5
+      passive: 5
+      insightful: 5
+      dull: 5
+      reliable: 5
+      unreliable: 5
+      agreeable: 5
+      adversarial: 5
+    coexistence_note: ''
+    relationship_to_player: 0
+    status: active
+    current_goal: ''
+    notes: ''
+- id: world.time
+  templateVersion: 1
+  label: 当前时间
+  schema:
+    type: object
+    title: 当前时间
+    additionalProperties: false
+    required:
+    - day
+    - hour
+    - minute
+    properties:
+      day:
+        type: integer
+        minimum: 1
+        title: 第几天
+      hour:
+        type: integer
+        minimum: 0
+        maximum: 23
+        title: 小时
+      minute:
+        type: integer
+        minimum: 0
+        maximum: 59
+        title: 分钟
+  initial:
+    day: 1
+    hour: 19
+    minute: 0
+- id: world.location
+  templateVersion: 1
+  label: 当前地点
+  schema:
+    type: object
+    title: 当前地点
+    additionalProperties: false
+    required:
+    - id
+    - name
+    - region
+    - scene
+    properties:
+      id:
+        type: string
+        maxLength: 120
+        title: 地点 ID
+      name:
+        type: string
+        maxLength: 120
+        title: 地点名称
+      region:
+        type: string
+        maxLength: 120
+        title: 所属区域
+      scene:
+        type: string
+        maxLength: 160
+        title: 具体场景
+  initial:
+    id: chisei_cho_annai_sho
+    name: 秩聖町
+    region: 猩红山脚下
+    scene: 案内所
+stateDefinitionIds: []
+stateEntityTypes:
+- id: npc
+  collectionPath: entities.npcs
+  label: NPC 角色
+timelineStateEntities:
+- typeId: npc
+  entityId: ayakouji_hanako
+- typeId: npc
+  entityId: imagawa_akari
+- typeId: npc
+  entityId: narumi_tooru
+- typeId: npc
+  entityId: kiryu_rie
+- typeId: npc
+  entityId: sato_nagi
+- typeId: npc
+  entityId: sato_daichi
+timelineComponentMounts:
+- templateId: npc.profile
+  templateVersion: 1
+  componentKey: profile
+  target:
+    kind: entity
+    entity:
+      typeId: npc
+      entityId: ayakouji_hanako
+  initial:
+    name: 绫小路華子
+    age: 20
+    role: 瑞穗集团常务董事的千金
+    faction: 瑞穗集团
+    summary: 被家族安排来秩聖町“视察”的名门大小姐，娇纵傲慢，对本地危险几乎没有自觉。
+    personality_axes:
+      open: 3
+      closed: 7
+      bold: 6
+      passive: 6
+      insightful: 5
+      dull: 8
+      reliable: 1
+      unreliable: 9
+      agreeable: 3
+      adversarial: 8
+    coexistence_note: 高[大胆]与高[消极]共存于娇生惯养：嘴上敢得罪任何人，行动上却毫无自保能力
+    relationship_to_player: 0
+    status: active
+    current_goal: 走完所谓视察流程，尽早离开这个没有信号和柏油路的地方。
+    notes: ''
+- templateId: npc.profile
+  templateVersion: 1
+  componentKey: profile
+  target:
+    kind: entity
+    entity:
+      typeId: npc
+      entityId: imagawa_akari
+  initial:
+    name: 今川灯里
+    age: 23
+    role: 町役场档案员 / 今川家旁支
+    faction: 今川家
+    summary: 表面温和可靠的本地档案员，熟悉町中规则与旧档案，也熟悉如何让外来者信任自己。
+    personality_axes:
+      open: 5
+      closed: 9
+      bold: 8
+      passive: 3
+      insightful: 8
+      dull: 5
+      reliable: 6
+      unreliable: 10
+      agreeable: 8
+      adversarial: 8
+    coexistence_note: 极端的[双面人]，高[可靠/讨人喜欢]是她诱捕猎物的饵，高[不可靠/对抗]才是她的底色
+    relationship_to_player: 0
+    status: active
+    current_goal: 维持可靠无害的形象，筛选可以利用的人
+    notes: ''
+- templateId: npc.profile
+  templateVersion: 1
+  componentKey: profile
+  target:
+    kind: entity
+    entity:
+      typeId: npc
+      entityId: narumi_tooru
+  initial:
+    name: 鸣海透
+    age: 28
+    role: 三流网媒外包写手 / 前周刊记者
+    faction: 外来者
+    summary: 急于翻身的落魄记者，为挖掘秩聖町黑幕而来，把危险误当成了独家新闻的入口。
+    personality_axes:
+      open: 7
+      closed: 3
+      bold: 7
+      passive: 4
+      insightful: 4
+      dull: 7
+      reliable: 3
+      unreliable: 7
+      agreeable: 6
+      adversarial: 2
+    coexistence_note: 高[大胆]和高[迟钝]是典型送死组合；[讨人喜欢]的社畜笑脸下藏着[不可靠]的投机心。
+    relationship_to_player: 0
+    status: active
+    current_goal: 找到能让自己翻身的独家黑料，并活着带出去。
+    notes: ''
+- templateId: npc.profile
+  templateVersion: 1
+  componentKey: profile
+  target:
+    kind: entity
+    entity:
+      typeId: npc
+      entityId: kiryu_rie
+  initial:
+    name: 桐生理惠
+    age: 21
+    role: 瑞穗综合实业集团出向社员
+    faction: 瑞穗集团
+    summary: 被派驻秩聖町的职业社员，负责核对特殊物资与赔偿账目，只想熬完任期回东京。
+    personality_axes:
+      open: 2
+      closed: 8
+      bold: 2
+      passive: 8
+      insightful: 8
+      dull: 6
+      reliable: 8
+      unreliable: 5
+      agreeable: 6
+      adversarial: 3
+    coexistence_note: 高[洞察力]与高[迟钝/枯燥]并存，她不是看不出真相，而是用麻木的职业性自我催眠选择看不见
+    relationship_to_player: 0
+    status: active
+    current_goal: 完成本月账目核对，维持表面正常，等待调回东京。
+    notes: ''
+- templateId: npc.profile
+  templateVersion: 1
+  componentKey: profile
+  target:
+    kind: entity
+    entity:
+      typeId: npc
+      entityId: sato_nagi
+  initial:
+    name: 佐藤凪
+    age: 16
+    role: 佐藤大地的妹妹 / 外来者
+    faction: 外来者
+    summary: 体弱敏感的少女，已经察觉秩聖町的异常，却不敢把恐惧说出口。
+    personality_axes:
+      open: 3
+      closed: 8
+      bold: 2
+      passive: 9
+      insightful: 8
+      dull: 2
+      reliable: 5
+      unreliable: 6
+      agreeable: 9
+      adversarial: 2
+    coexistence_note: 高[洞察力]和高[消极]是绝望的根源：她看得清屠宰场，却因为[封闭]和[体弱]选择缩在哥哥羽翼下等死
+    relationship_to_player: 0
+    status: active
+    current_goal: 和哥哥一起找到大哥的下落，并活着离开秩聖町。
+    notes: ''
+- templateId: npc.profile
+  templateVersion: 1
+  componentKey: profile
+  target:
+    kind: entity
+    entity:
+      typeId: npc
+      entityId: sato_daichi
+  initial:
+    name: 佐藤大地
+    age: 23
+    role: 前工地与物流工人 / 佐藤凪的哥哥
+    faction: 外来者
+    summary: 靠体力与忍耐撑起家庭的年轻男人，为领取大哥遗物带妹妹来到秩聖町。
+    personality_axes:
+      open: 7
+      closed: 3
+      bold: 9
+      passive: 1
+      insightful: 2
+      dull: 8
+      reliable: 9
+      unreliable: 3
+      agreeable: 5
+      adversarial: 6
+    coexistence_note: '[可靠]护盾也是最大的破绽'
+    relationship_to_player: 0
+    status: active
+    current_goal: 领取大哥的遗物与慰劳金，保护妹妹
+    notes: ''
+stateContributionIds: []
+timelineStateBindings:
+- path: player.constants
+  templateId: player.constants
+  templateVersion: 1
+- path: world.time
+  templateId: world.time
+  templateVersion: 1
+- path: world.location
+  templateId: world.location
+  templateVersion: 1
