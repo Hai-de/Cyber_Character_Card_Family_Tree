@@ -113,38 +113,6 @@
       letter-spacing: 0.18em;
     }
 
-    .fixed-opening {
-      position: relative;
-      max-width: 760px;
-      padding: 4px 0 22px 26px;
-      border-left: 1px solid rgba(199, 166, 107, 0.42);
-      color: var(--ink-soft);
-      font-family: var(--font-serif);
-      font-size: clamp(15px, 1.65vw, 17.5px);
-      line-height: 2;
-    }
-
-
-    .fixed-opening .opening-line {
-      margin: 0 0 13px;
-      text-wrap: pretty;
-    }
-
-    .fixed-opening blockquote {
-      margin: 17px 0;
-      padding: 13px 16px;
-      border: 1px solid rgba(182, 73, 82, 0.25);
-      border-radius: 10px;
-      background: rgba(182, 73, 82, 0.06);
-      color: #e9ddd5;
-    }
-
-    .fixed-opening .opening-end {
-      margin-bottom: 0;
-      color: var(--gold);
-      font-size: 0.92em;
-    }
-
     .form-shell {
       margin-top: 18px;
       padding-top: 26px;
@@ -679,8 +647,6 @@
         border-inline: 0;
       }
 
-      .fixed-opening { padding-left: 17px; }
-      .fixed-opening::before { left: 16px; }
       .basic-grid,
       .trait-grid,
       .shadow-grid { grid-template-columns: 1fr; }
@@ -704,12 +670,7 @@
 <body>
   <main class="page">
     <header>
-      <h1>猩红山脚下</h1>
-      <section class="fixed-opening" id="fixedOpening" aria-label="固定故事开场白">
-        <div class="opening-line">第七天了，山里的雾还是没有散</div>
-        <div class="opening-line">那贴在皮肤上、带着铁锈与烂熟果子腥甜的温热湿气。猩红山脚下的秩聖町像一枚被暖水泡胀的旧印章，屋檐、泥路与远处的山脊都在粉红色的薄雾里洇成暧昧的暗红。你抵达时，本周最后一班通往山外的破旧货车已经调头离开，只剩路口木造案内所前的一盏灯还亮着。</div>
-        <div class="opening-line">你推门进去，门上的旧铜铃发出一声沉闷的响。柜台后的女人穿着没有纽扣、全靠丝带系紧的宽松裙装，她没有立刻抬头，只把一本厚重的名册推到你面前，册页被潮气浸得发软，上面只有一列列被水渍晕开的旧名字。</div>
-      </section>
+      <h2>猩红山脚下</h2>
     </header>
 
     <form class="form-shell" id="surveyForm" novalidate>
@@ -1018,7 +979,7 @@
             '是馈赠也是诅咒',
             '能安抚狂躁生物，却总让他人背脊发凉的奇异亲和力'
           ],
-          shadow: '当你俯下身倾听，灌进耳朵的全是产仔数窝的生物在发情期的嘶鸣、狂热以及交配冲动，它们毫不掩饰地把你当成同类或温床'
+          shadow: '倾听灌进耳朵的全是产仔数窝的生物在发情期的嘶鸣、狂热以及交配冲动，它们时时刻刻都在毫不掩饰发泄繁殖冲动'
         },
         street: {
           name: '街头智慧',
@@ -1129,6 +1090,16 @@
           name: '已逝之色',
           en: 'Faded Colors',
           shadow: '眼中世界只剩黑白与深浅不一的灰……全色盲？！'
+        },
+        overgeneralization: {
+          name: '过度概括症',
+          en: 'Overgeneralization',
+          shadow: '没法记住任何具体的细节，人名、日期、路线、数字与眼前的特征都会在记忆里糊成一片，只留下模糊的印象和概括后的结论'
+        },
+        faceBlindness: {
+          name: '脸盲......',
+          en: 'Face Blindness',
+          shadow: '无法提取脸部细节，能看见人脸，却无法从中辨认出稳定特征；熟悉的人和陌生人会变成相似的轮廓，只能依靠声音、衣着与情境来判断'
         }
       };
 
@@ -1191,14 +1162,17 @@
         else generateButton.setAttribute('aria-disabled', 'true');
       }
 
-      function getOpeningText() {
-        const opening = document.getElementById('fixedOpening');
-        if (!opening) return '';
-        const blocks = Array.from(opening.querySelectorAll('.opening-line, blockquote'))
-          .map(element => element.textContent.replace(/\s+/g, ' ').trim())
-          .filter(Boolean);
-        return blocks.length ? blocks.join('\n\n') : opening.textContent.replace(/\s+/g, ' ').trim();
-      }
+      const STORY_OUTLINE_GUIDANCE = [
+        '### 开场大纲',
+        '从主角抵达秩聖町开始，之后才展现环境湿热、电子信号失联、被本地人热情欢迎，偶然间听到其他人的交流知道了因为最近的天气原因让主角无法离开',
+        '简单描述主角将行李整理好后开始思考自己来到这里的所见所闻，将环境描写直接用主角的感受总结省略所有的细节，主角自言自语觉得自己来到的这个环境感觉有点不对劲，随后突然被民宿的人敲门提醒到公共食堂吃饭的时间了，主角得知民宿不提供食物，需要主角自己前往公共食堂吃饭',
+        '主角被人提醒后出门遇到了佐藤兄妹并彼此交谈得以初步互相认识，并由主角主动邀请一起去公共食堂吃饭，但鸣海透突然插话加入了交流，在一番自我介绍后众人才知道原来他是来这里实地采访，主角和佐藤兄妹又报了一次自己的名字让这个人知道，随后四人前往了公共食堂',
+        '主角在来到公共食堂后发现这里极其热闹，并且在这个食堂内，所有位置都坐满了，唯有两个少女的身边一个人也没有，四人在这个位置坐了下来',
+        '主角与佐藤兄妹、鸣海透在公共食堂与两位少女同桌时。刚坐下时，双方因彼此陌生而只维持着客套，桌上气氛略显不自然',
+        '短暂的冷场后，今川灯里借着上菜和询问口味的由头先向两名未知少女搭话，主角顺势接过话头。绫小路華子先骄傲地报出自己的姓名与家世，众人也随后了解到了旁边的桐生理惠；在交流中，主角、鸣海透和佐藤兄妹也依次向两人介绍了自己的姓名与来意。几句客套与试探之后，众人终于完成了第一次相互认识',
+        '随着身份与来意逐渐摊开，众人因为一些原因产生了些许摩擦。饭局后半，突然出现的无人愿意解释的话题让气氛开始冷却下来，原本热络的欢迎显露出不太自然的一面'
+        
+      ].join('\n');
 
       function updateTraitControls() {
         const selected = selectedTraitKeys();
@@ -1330,17 +1304,12 @@
         const pureShadow = shadowKey ? PURE_NEGATIVE_TRAITS[shadowKey] : undefined;
         const shadow = shadowKey ? (TRAITS[shadowKey] || pureShadow) : undefined;
 
-        const openingText = getOpeningText();
         const lines = [
-          '# 猩红山脚下',
-          '',
-          '> 以下为玩家提交的纯文本角色档案。请把它作为本次故事的既定开局资料',
+          '> 以下为玩家设定的角色档案。请把它作为本次故事的开局资料',
           ''
         ];
 
-        if (openingText) {
-          lines.push('## 故事开场白', '', openingText, '');
-        }
+        lines.push('## 开场大纲的情节', '', STORY_OUTLINE_GUIDANCE, '');
 
         lines.push(
           '## 主角信息',
@@ -1375,15 +1344,15 @@
 
         lines.push(
           '## 后续写入 State 指引',
-          '1. 解析姓名、代词、城市、三项特质和一项负面特质。',
+          '1. 获取姓名、代词、城市、三项特质和一项负面特质',
           '2. 将三项特质分别写成 `trait_1`、`trait_2`、`trait_3`',
           '3. 写入 `negative_trait`',
           '4. 根据来源写入：',
           '   - `negative_trait_kind: "derived"` 或 `"pure"`',
           '   - `negative_trait_source`：derived 时填来源特质，pure 时填空字符串。',
-          '5. 写入 `background_notes`。',
-          '6. 最后把 `completed` 设为 `true`。',
-          '7. 此后这组字段视为只读，不再随剧情更新。',
+          '5. 写入 `background_notes`',
+          '6. 最后把 `completed` 设为 `true`',
+          '7. 此后这组字段视为只读，不再随剧情更新',
           '',
         );
 
@@ -1398,7 +1367,7 @@
         resultPanel.hidden = false;
         generateButton.textContent = '重新生成背景';
         generateButton.title = '点击重新生成背景档案';
-        announce('背景档案已生成。');
+        announce('背景档案已生成');
         scrollToElement(resultPanel);
         window.setTimeout(() => {
           resultText.focus({ preventScroll: true });
@@ -1434,7 +1403,7 @@
         if (copied) {
           copyButton.textContent = '已复制';
           copyButton.removeAttribute('aria-label');
-          announce('背景档案已复制到剪贴板。');
+          announce('背景档案已复制到剪贴板');
         } else {
           copyButton.textContent = '手动复制';
           copyButton.setAttribute('aria-label', '自动复制不可用，请手动复制');

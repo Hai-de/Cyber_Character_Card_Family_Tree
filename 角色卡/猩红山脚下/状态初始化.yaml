@@ -86,7 +86,7 @@ stateTemplates:
   schema:
     type: object
     title: NPC 角色档案
-    description: NPC 的静态档案与少量运行态字段。
+    description: NPC 的运行态字段
     additionalProperties: false
     required:
     - name
